@@ -1,0 +1,15 @@
+@use './color' as color;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap');
+@import './media';
+
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: color.$VeryDarkBlue!important;
+  color:color.$VeryLightGray;
+  font-family: "Josefin Sans", serif;
+  background: url('../bg-desktop-dark.jpg') no-repeat top center;
+  }

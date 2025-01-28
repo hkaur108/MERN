@@ -1,0 +1,36 @@
+@media screen and (max-width:600px){
+    .container{
+        padding:0rem;
+        margin:0 2rem!important;
+        .aligning-container{
+            display: flex;
+            justify-content: center!important;
+        }
+        .heading{
+            font-size: 1.70rem;
+        }
+        form{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            fieldset{
+                width:90%;
+                input{
+                    width:60%;
+                   }
+                    button{
+                        width:30%;
+                           margin: 0.5rem auto ;
+                    }
+            }
+        }
+        .table-container{
+            display: block;
+            margin:auto;
+            width:100%;
+            
+        }
+    }
+    
+    
+}

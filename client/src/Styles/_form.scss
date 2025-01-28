@@ -1,0 +1,23 @@
+@use './color' as color;
+.form{
+    width:100%;
+    margin: 2rem 0;
+    input{
+        width: 70%;
+        background-color: color.$VeryDarkDesaturatedBlue;
+        color:color.$LightGrayishBlue;
+        padding:.6rem;
+        text-transform: lowercase;
+    }
+    
+    button{
+        border-top-left-radius: 0!important;
+        border-bottom-left-radius: 0!important;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+    }
+    label{
+        display: none;
+
+    }
+}

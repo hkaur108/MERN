@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap");
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0rem;
+    margin: 0 2rem !important;
+  }
+  .container .aligning-container {
+    display: flex;
+    justify-content: center !important;
+  }
+  .container .heading {
+    font-size: 1.7rem;
+  }
+  .container form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container form fieldset {
+    width: 90%;
+  }
+  .container form fieldset input {
+    width: 60%;
+  }
+  .container form fieldset button {
+    width: 30%;
+    margin: 0.5rem auto;
+  }
+  .container .table-container {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(235, 21%, 11%) !important;
+  color: hsl(0, 0%, 98%);
+  font-family: "Josefin Sans", serif;
+  background: url("../bg-desktop-dark.jpg") no-repeat top center;
+}/*# sourceMappingURL=App.css.map */
