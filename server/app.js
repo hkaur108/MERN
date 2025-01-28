@@ -17,7 +17,9 @@ app.use(express.json())
 app.use('/url',urlRouter)
 app.use(express.urlencoded({extended:false}))
 
-
+app.get('/',(req,res)=>{
+    res.send('I am connected')
+})
 //port listening on 4000
 app.listen(PORT,()=>{
     console.log(`connected to server on port ${PORT}`)
