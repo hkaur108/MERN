@@ -37,7 +37,7 @@ export default function App() {
     if(url){
       seturl("")
     }
-    await axios.post('https://url-shorter-backend-zg55.onrender.com',{url:url})
+    await axios.post('https://url-shorter-backend-zg55.onrender.com/url',{url:url})
     .catch((err)=>console.log(err.response))
 
     setInterval(()=>{
