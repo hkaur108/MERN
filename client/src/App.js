@@ -16,13 +16,13 @@ export default function App() {
   const [allUrls,setallUrls] = useState([{_id:"",redirectURL:"",shortUrl:"",totalClick:""}]);
   
   async function connectToBackend(){
-   await axios.get('http://localhost:8000/url')
+   await axios.get('https://url-shorter-backend-zg55.onrender.com/url')
     .then((response)=>setallUrls(response.data))
     .catch((error)=>console.log(error.response))
     
   }
   const handleDelete=async ()=>{
-    await axios.delete('http://localhost:8000/url')
+    await axios.delete('https://url-shorter-backend-zg55.onrender.com/url')
     
   }
 
@@ -37,7 +37,7 @@ export default function App() {
     if(url){
       seturl("")
     }
-    await axios.post('http://localhost:8000/url',{url:url})
+    await axios.post('https://url-shorter-backend-zg55.onrender.com',{url:url})
     .catch((err)=>console.log(err.response))
 
     setInterval(()=>{
