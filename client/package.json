@@ -11,16 +11,12 @@
     "ajv-keywords": "^5.1.0",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
     "sass": "^1.83.4",
     "web-vitals": "^2.1.4"
   },
-  "overrides": {
-    "react-typical": {
-      "react": "^19.0.0"
-    }},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
