@@ -19,7 +19,7 @@
   },
   "overrides": {
     "react-typical": {
-      "react": "^18.0.0"
+      "react": "^19.0.0"
     }},
   "scripts": {
     "start": "react-scripts start",
