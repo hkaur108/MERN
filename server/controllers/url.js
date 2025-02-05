@@ -5,22 +5,28 @@ async function handlegenerateShortURL(req,res){
     const body=req.body;
     if(!body.url) return res.status(400).json({error:'url is required'})
     const shortID= nanoid(8);
-    await URL.create({
+    const existingUrl=await URL.findOne({ url: body.url});
+    try{
+        if(!existingUrl){
+        const entry= await URL.create({
         shortid:shortID,
         redirectURL:body.url,
-        visitHistory:[],
-        shortUrl:`https://${shortID}`
+        shortUrl:`https://www.${shortID}`
     })
-    return res.json({id:shortID})
+    return res.json({id:shortID,entry})
+        }
+    }
+    catch(error){
+        res.send({'error':'duplicate url'})
+    }  
 }
+
 
 async function redirectURLToOriginalWebsite(req,res){
     const shortid=req.params.shortID;
     const recordFoundInDB=await URL.findOneAndUpdate(
         {shortid:shortid},
-        {$push:{
-            visitHistory:{timestamp:Date.now()}
-        }}
+        {$inc:{visitHistory:1}}
     );
     try{
         if(!recordFoundInDB) throw new Error('record not found')
@@ -34,7 +40,7 @@ async function redirectURLToOriginalWebsite(req,res){
 async function handleGetAnalytics(req,res){
     const shortid=req.params.shortID;
     const result =await URL.findOne({shortid})
-    const totalClicks= result.visitHistory.length;
+    const totalClicks= result.visitHistory;
     return res.json({'totalClick':totalClicks})
 }
 async function getAllRecords(req,res){
@@ -44,10 +50,15 @@ async function getAllRecords(req,res){
 
 }
 async function deleteAllRecords(req,res){
-    const deletedRecords= await URL.deleteMany({});
-    return res.send(deletedRecords)
+    const checkingLength=await URL.find({});
+    if(checkingLength >=1){
+        const deletedRecords= await URL.deleteMany({});
+        return res.send(deletedRecords)
+    }
+    else{
+        return res.json({error:"No enteries found"})
+    }
    
-
 }
 
 module.exports={
