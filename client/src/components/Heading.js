@@ -6,7 +6,10 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 export default function Heading() {
   return (
-    <div className='heading text-center'>
-      URL SHORTNER SERVICE </div>
+    <header 
+     role="heading"
+    className='heading text-center fw-bold'
+     aria-description="heading for the URL shortener service"
+    ><h2>URL SHORTNER SERVICE </h2></header>
   )
 }

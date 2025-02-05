@@ -1,13 +1,17 @@
 @use './color' as color;
 .form{
+    transition: all 0.3s ease-in;
     width:100%;
-    margin: 2rem 0;
+    label,legend{
+        display: none!important;
+    }
     input{
-        width: 70%;
+        padding:12px 40px!important;
+        width: 100%;
         background-color: color.$VeryDarkDesaturatedBlue;
         color:color.$LightGrayishBlue;
         padding:.6rem;
-        text-transform: lowercase;
+        border:none;
     }
     
     button{

@@ -1,21 +1,26 @@
 @use './color' as color;
 .table-container{
     letter-spacing: 1px;
-   
+    transition:all 0.3s ease-in; 
     margin:auto;
-    th,tr,td{
+     tr{
+                margin:2rem 0;
+    }
+    th,tr,td,a{
         background-color: color.$VeryDarkDesaturatedBlue;
         color:color.$LightGrayishBlue;
         transition: all 0.5s ease-in-out;
         font-size: 1.10rem;
         padding:0.5em;
+
     }
     th,tr,td{
-        border:1px solid color.$VeryDarkGrayishBlue;
+        border:none;
+        outline: none;
     }
     td{
         a{
-            color:color.$LightGrayishBlue;
+            // color:color.$LightGrayishBlue;
             text-decoration: none;
         }
     }
